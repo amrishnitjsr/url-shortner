@@ -9,18 +9,84 @@
     rel="stylesheet"
   />
   <style>
-    body { padding-top: 50px; background-color: #f8f9fa; }
-    .container { max-width: 700px; }
-    h1 { margin-bottom: 30px; text-align: center; }
-    table { margin-top: 30px; }
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      overflow-x: hidden;
+
+      /* Background image */
+      background-image: url("/images/image1.webp");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
+
+
+    /* Logout button container */
+    .logout-container {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 10;
+    }
+
+    h1 {
+      text-align: center;
+      color: #007bff;
+      margin-top: 50px;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+    }
+
+    /* Transparent form container */
+    .form-box {
+      max-width: 700px;
+      margin: 30px auto;
+      background-color: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    /* Table styling */
+    .table {
+      margin-top: 30px;
+      background-color: rgba(255, 255, 255, 0.85);
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    /* To wrap long URLs without breaking layout */
+    .wrap-text {
+      word-break: break-all;
+      white-space: normal;
+    }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1 class="text-primary">URL Shortener</h1>
 
-    <!-- 🔗 URL input form -->
-    <form action="/" method="POST" class="border p-4 shadow bg-white rounded">
+ 
+
+  <!-- Logout Button -->
+  <div class="logout-container">
+    <form action="/logout" method="GET">
+      <button type="submit" class="btn btn-danger btn-sm">Logout</button>
+    </form>
+  </div>
+
+  <h1>URL Shortener</h1>
+
+  <!-- URL Input Form -->
+  <div class="form-box">
+    <form action="/" method="POST" novalidate>
       <div class="mb-3">
         <label for="fullurl" class="form-label">Enter Full URL</label>
         <input
@@ -34,25 +100,30 @@
       </div>
       <button type="submit" class="btn btn-primary">Shrink</button>
     </form>
+  </div>
 
-    <!-- 📋 Table showing URLs -->
-    <table class="table table-striped table-hover mt-4">
+  <!-- URLs Table -->
+  <div>
+    <table class="table table-striped table-hover">
       <thead class="table-dark">
         <tr>
           <th>Full URL</th>
           <th>Short URL</th>
           <th>Clicks</th>
-          <th>Action</th> <!-- ✅ New column for Delete -->
+          <th>Action</th>
         </tr>
       </thead>
       <tbody>
         <% urls.forEach(url => { %>
           <tr>
-            <td><a href="<%= url.full %>" target="_blank"><%= url.full %></a></td>
-            <td><a href="/<%= url.short %>" target="_blank"><%= url.short %></a></td>
+            <td class="wrap-text">
+              <a href="<%= url.full %>" target="_blank" rel="noopener noreferrer"><%= url.full %></a>
+            </td>
+            <td class="wrap-text">
+              <a href="/<%= url.short %>" target="_blank" rel="noopener noreferrer"><%= url.short %></a>
+            </td>
             <td><%= url.clicks %></td>
             <td>
-              <!-- 🗑 Delete button form -->
               <form action="/delete/<%= url._id %>" method="POST" onsubmit="return confirm('Are you sure you want to delete this URL?');">
                 <button class="btn btn-danger btn-sm">Delete</button>
               </form>
@@ -62,5 +133,6 @@
       </tbody>
     </table>
   </div>
+
 </body>
 </html>
