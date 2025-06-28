@@ -60,23 +60,7 @@ PORT=5000
 --------
 ## Folder Structure
 
-url-shortner/
-├── models/
-│   ├── User.js           # User schema and model
-│   └── shorturl.js       # URL schema and model
-├── public/
-│   ├── images/           # Images for background, etc.
-│   └── css/              # Stylesheets (if any)
-├── views/
-│   ├── index.ejs         # Homepage and URL list
-│   ├── login.ejs         # Login page
-│   ├── signup.ejs        # Signup page
-│   └── partials/         # (optional) header/footer partials
-├── .env                  # Environment variables (not committed to GitHub)
-├── server.js             # Main server file
-├── package.json          # Project metadata and dependencies
-└── README.md             # This file
----------
+![Folder_Structure(https://github.com/amrishnitjsr/url-shortner/blob/main/public/Folder_Structure/Screenshot%202025-06-28%20194558.png)
 
 
 
@@ -111,11 +95,11 @@ Email: amrishrock2002@gmail.com
 
 
 ### Signup
-![Login Screenshot](https://github.com/amrishnitjsr/url-shortner/raw/main/public/screenshorts/signup.png)
+![signup Screenshot](https://github.com/amrishnitjsr/url-shortner/raw/main/public/screenshorts/signup.png)
 
 
 ### Homepage
-![Login Screenshot](https://github.com/amrishnitjsr/url-shortner/raw/main/public/screenshorts/home.png)
+![home Screenshot](https://github.com/amrishnitjsr/url-shortner/raw/main/public/screenshorts/home.png)
 
 
 
