@@ -111,10 +111,12 @@ Email: amrishrock2002@gmail.com
 
 
 ### Signup
-![Homepage Screenshot](public/screenshots/signup.png)
+![Login Screenshot](https://github.com/amrishnitjsr/url-shortner/raw/main/public/screenshorts/signup.png)
+
 
 ### Homepage
-![Homepage Screenshot](public/screenshots/home.png)
+![Login Screenshot](https://github.com/amrishnitjsr/url-shortner/raw/main/public/screenshorts/home.png)
+
 
 
 
