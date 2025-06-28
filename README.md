@@ -60,7 +60,10 @@ PORT=5000
 --------
 ## Folder Structure
 
-![Folder_Structure(https://github.com/amrishnitjsr/url-shortner/blob/main/public/Folder_Structure/Screenshot%202025-06-28%20194558.png)
+### 📁 Folder Structure
+
+![Folder Structure](https://github.com/amrishnitjsr/url-shortner/raw/main/public/Folder_Structure/Screenshot%202025-06-28%20194558.png)
+
 
 
 
