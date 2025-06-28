@@ -107,7 +107,8 @@ Amrish Yadav
 Email: amrishrock2002@gmail.com
 
 ### Login
-![Homepage Screenshot](public/screenshots/login.png)
+![Login Screenshot](https://github.com/amrishnitjsr/url-shortner/raw/main/public/screenshorts/login.png)
+
 
 ### Signup
 ![Homepage Screenshot](public/screenshots/signup.png)
